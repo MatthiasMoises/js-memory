@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="de-DE">
+<head>
+  <title>Zonk Memory</title>
+  <meta charset="utf-8">
+  <meta name="robots" content="noindex">
+  <link rel="stylesheet" href="libs/bootstrap-3.3.7-dist/css/bootstrap.min.css">
+  <link rel="stylesheet" href="assets/css/layout.css">
+  <script type="text/javascript" src="assets/js/jquery-3.1.1.min.js"></script>
+  <script type="text/javascript" src="assets/js/jquery-ui.js"></script>
+  <script type="text/javascript" src="assets/js/game.js"></script>
+</head>
+
+<body>
+
+<div class="container-fluid">
+
+  <header>
+    <h1>Memory Spiel - mit dem Zonk&trade;</h1>
+  </header>
+
+  <br/>
+
+  <div id="game-container"></div>
+
+  <div id="sidebarContainer">
+
+    <div id="statistics-container">
+      <h3>Statistiken</h3>
+      <p>
+        <b>Anzahl Korrekt</b>
+        <br/>
+        <span id="pairsCorrect"></span>
+      </p>
+      <p>
+        <b>Anzahl Fehlversuche</b>
+        <br/>
+        <span id="pairsWrong"></span>
+      </p>
+      <p>
+        <b>Verbleibende Zeit</b>
+        <br/>
+        <span id="timeLeft" class="statistic-green"></span>
+      </p>
+      <p>
+        <b>Verbleibende Z&uuml;ge</b>
+        <br/>
+        <span id="completeTurnsLeft" class="statistic-green"></span>
+      </p>
+      <p>
+        <b>Score</b>
+        <br/>
+        <span id="score"></span>
+      </p>
+    </div>
+
+    <br/>
+
+    <div id="menu-container">
+      <h3>Men&uuml;</h3>
+      <form id="menuForm" method="get">
+        <p>
+          <label for="difficultySelect">Schwierigkeitsgrad:</label>
+          <select id="difficultySelect" class="form-control">
+            <option value="easy">Leicht</option>
+            <option value="medium">Mittel</option>
+            <option value="hard">Schwer</option>
+          </select>
+        </p>
+
+        <br/>
+
+        <input type="hidden" id="difficultySetting" name="difficulty" value="" />
+
+        <p>
+          <input type="button" class="btn btn-primary" id="restartButton" value="Neues Spiel" />
+        </p>
+        <br/>
+        <p>
+          <input type="button" class="btn btn-primary" id="endGame" value="Spiel beenden" />
+        </p>
+      </form>
+    </div>
+
+  </div>
+
+  <div class="clear"></div>
+
+  <div id="audio-container">
+    <audio id="audio_1" src="assets/sounds/success_1_sound_effect.mp3"></audio>
+    <audio id="audio_2" src="assets/sounds/losing_horn_-_gaming_sound_effect.mp3"></audio>
+    <audio id="audio_3" src="assets/sounds/imgburn_success_sound.mp3"></audio>
+    <audio id="audio_4" src="assets/sounds/zonk_jingle.mp3"></audio>
+    <audio id="audio_5" src="assets/sounds/sad_trombone.mp3"></audio>
+  </div>
+
+  <div id="dialog-loser" title="">
+    <img src="assets/img/cards/zonk.png" alt="zonk">
+    <p id="message-loser">GAME OVER!</p>
+  </div>
+
+  <div id="dialog-winner" title="">
+    <img src="assets/img/other/yay.gif" alt="yay">
+    <p id="message-winner">YOU WIN!</p>
+  </div>
+
+  <br/>
+
+  <footer>
+    &copy; 2017
+  </footer>
+
+</div>
+
+
+
+</body>
+</html>
